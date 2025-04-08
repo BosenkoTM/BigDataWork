@@ -20,6 +20,101 @@
 6. **Подготовка отчета.**  
    Оформить отчет по выполненной практике, в котором будет описан процесс выполнения работы, анализ полученных результатов и выводы. Включить ссылки на репозиторий и прикрепить сам отчет в формате PDF или Markdown.
 
+Алгоритм выполнения задания в Apache Hadoop
+
+Развернуть образ конфигурации  [ds_mgpu_Hadoop3+spark_3_4](http://95.31.0.249/moodle/mod/assign/view.php?id=1357) 
+
+Все дальнейшие действия выполняются пользователем hadoop.
+```bash
+sudo su - hadoop
+```
+
+Шаг 1. Запуск Hadoop.
+```bash
+start-dfs.sh
+```
+
+```bash
+start-yarn.sh
+```
+Шаг 2. Проверка работы Hadoop.
+```bash
+jps
+```
+
+В стандартной конфигурации Hadoop HDFS предоставляет веб-интерфейсы:
+-	HDFS NameNode: http://localhost:9870 
+-	YARN ResourceManager: http://localhost:8088
+
+установить разрешение на запись для всех пользователей
+
+```bash
+hdfs dfs -chmod 775 /user2/hadoop/economic_data
+```
+
+разрешить запись только пользователю devops
+
+```bash
+hdfs dfs -setfacl -m user:devops:rwx /user3/hadoop/economic_data
+
+Для того чтобы загрузить все файлы из локальной папки `~/Downloads/lab_1_2/data` в HDFS в папку `sparkdir`, выполните следующие шаги:
+
+### Шаг 1. Создание папки в HDFS
+
+Для начала создадим каталог `sparkdir` в HDFS:
+
+```bash
+hdfs dfs -mkdir -p /user5/sparkdir
+```
+
+Замените `devops` на имя пользователя, если это необходимо.
+
+### Шаг 2. Загрузка файлов в HDFS
+
+Теперь, когда папка `sparkdir` создана, нужно загрузить все файлы из локальной директории в HDFS.
+
+Для этого используйте команду `hdfs dfs -put`:
+
+```bash
+hdfs dfs -put /home/hadoop/Downloads/lab_01_2/lab_1_2/data/* /user5/sparkdir/
+```
+
+Эта команда загрузит все файлы из папки `/home/hadoop/Downloads/lab_01_2/lab_1_2/data/` в папку `sparkdir` на HDFS.
+
+### Шаг 3. Проверка загрузки
+
+Чтобы убедиться, что файлы были успешно загружены, выполните команду:
+
+```bash
+hdfs dfs -ls /user5/sparkdir/
+```
+
+Эта команда выведет список всех файлов в каталоге `sparkdir` на HDFS.
+
+Теперь все файлы из `~/Downloads/lab_1_2/data` должны быть успешно загружены в `sparkdir` на HDFS.
+
+
+Завершение работы с Hadoop
+
+```bash
+stop-yarn.sh
+```
+
+```bash
+stop-dfs.sh
+```
+
+Для полной остановки всех Hadoop-демонов:
+
+```bash
+stop-all.sh
+```
+
+Проверка остановки всех процессов:
+
+```bash
+jps
+```
 
 ## Индивидуальное задание
 
