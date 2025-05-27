@@ -25,7 +25,7 @@
 ### Материалы 
 - [Пошаговая инструкция (steps_z1.pdf)](https://github.com/BosenkoTM/BigDataWork/blob/main/gek/2025/data/z1/steps_z1.pdf)
 - [Данные GDP.csv](https://github.com/BosenkoTM/BigDataWork/blob/main/gek/2025/data/z1/GDP.csv)
-- Notebook с примером работы](https://github.com/BosenkoTM/BigDataWork/blob/main/gek/2025/data/z1/work_with_data_2024.ipynb)
+- [Notebook с примером работы](https://github.com/BosenkoTM/BigDataWork/blob/main/gek/2025/data/z1/work_with_data_2024.ipynb)
 
 ##  Задание 2. Анализ финансовых данных с использованием Hadoop и Hive
 
