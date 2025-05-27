@@ -18,14 +18,13 @@
 - [x] Сохранить результаты
 - [x] Автоматизировать процесс
 
-### Ресурсы для выполнения
-- **Пример выполнения:** [Moodle задание](http://95.131.149.21/moodle/mod/assign/view.php?id=919)
-
 ### Виртуальная гостевая ОС
 - **Система:** Ubuntu 24.04 ds_mgpu_Hadoop3+spark_3_4
 - **Ссылка для скачивания:** [Яндекс.Диск](https://disk.yandex.ru/d/zEKP6GY6Nosaxg)
 
-### Матери [Пошаговая инструкция (steps_z1.pdf)](https://github.com/BosenkoTM/BigDataWork/blob/main/gek/2025/data/z1/steps_z1.pdf [Данные GDP.csv](https://github.com/BosenkoTM/BigDataWork/blob/main/gek/2025/data/z1/GDP.csv)
+### Материалы 
+- [Пошаговая инструкция (steps_z1.pdf)](https://github.com/BosenkoTM/BigDataWork/blob/main/gek/2025/data/z1/steps_z1.pdf)
+- [Данные GDP.csv](https://github.com/BosenkoTM/BigDataWork/blob/main/gek/2025/data/z1/GDP.csv)
 - Notebook с примером работы](https://github.com/BosenkoTM/BigDataWork/blob/main/gek/2025/data/z1/work_with_data_2024.ipynb)
 
 ##  Задание 2. Анализ финансовых данных с использованием Hadoop и Hive
