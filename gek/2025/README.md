@@ -183,7 +183,7 @@ hdfs dfs -put dataset.csv /user/data/economic_analysis/
 - Описать, как архитектура обеспечивает высокую производительность и масштабируемость.
 
 ### Материалы
--Пошаговая инструкция (steps_z3.pdf)](https://github.com/BosenkoTM/BigDataWork/blob/main/gek/2025/data/z3/steps_z3.pdf)
+-Пошаговая инструкция [steps_z3.pdf](https://github.com/BosenkoTM/BigDataWork/blob/main/gek/2025/data/z3/steps_z3.pdf)
 
 ### Варианты задания 
 
