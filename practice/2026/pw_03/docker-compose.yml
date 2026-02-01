@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  jupyter:
+    image: jupyter/pyspark-notebook:latest
+    user: root
+    command: start-notebook.sh --NotebookApp.token=''
+    ports:
+      - '10000:8888'
+    environment:
+      - NB_USER=user
+      - NB_UID=3107
+      - CHOWN_HOME=yes
+      - CHOWN_HOME_OPTS=-R
+    volumes:
+      - "./:/home/user/work"
