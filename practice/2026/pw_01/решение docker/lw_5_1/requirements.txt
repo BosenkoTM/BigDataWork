@@ -1,0 +1,28 @@
+# Python dependencies for Earthquake Analysis Project
+
+# Data processing
+pandas==2.0.3
+numpy==1.24.3
+
+# Data visualization
+matplotlib==3.7.2
+seaborn==0.12.2
+plotly==5.15.0
+
+# Jupyter Notebook
+jupyter==1.0.0
+jupyterlab==4.0.5
+ipykernel==6.24.0
+
+# Spark/PySpark
+pyspark==3.4.1
+
+# Data analysis tools
+scikit-learn==1.3.0
+scipy==1.11.1
+
+# Utilities
+openpyxl==3.1.2
+xlsxwriter==3.1.2
+
+

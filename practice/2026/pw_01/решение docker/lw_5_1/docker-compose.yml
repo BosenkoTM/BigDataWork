@@ -1,0 +1,37 @@
+services:
+  hadoop:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hadoop-cluster
+    hostname: hadoop
+    ports:
+      - "9870:9870"    # NameNode UI
+      - "8088:8088"    # YARN UI
+      - "50070:50070" # Hadoop Dashboard (deprecated, use 9870)
+      - "9864:9864"    # DataNode Data Transfer Port
+      - "8888:8888"    # Jupyter Notebook
+      - "9000:9000"    # HDFS RPC
+      - "19888:19888"  # Job History
+      - "22:22"        # SSH
+    volumes:
+      - ./hadoop:/opt/hadoop/etc/hadoop
+      - ./scripts:/opt/scripts
+      - ./notebooks:/opt/notebooks
+      - ./database.csv:/opt/data/database.csv
+      - hadoop_data:/opt/hadoop_data
+    environment:
+      - JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+      - HADOOP_HOME=/opt/hadoop
+      - HDFS_NAMENODE_USER=root
+      - HDFS_DATANODE_USER=root
+      - HDFS_SECONDARYNAMENODE_USER=root
+      - YARN_RESOURCEMANAGER_USER=root
+      - YARN_NODEMANAGER_USER=root
+    stdin_open: true
+    tty: true
+
+volumes:
+  hadoop_data:
+    driver: local
+

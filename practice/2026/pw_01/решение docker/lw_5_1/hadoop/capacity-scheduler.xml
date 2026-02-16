@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<configuration>
+  <property>
+    <name>yarn.scheduler.capacity.root.queues</name>
+    <value>default</value>
+    <description>Список дочерних очередей для root.</description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.default.capacity</name>
+    <value>100</value>
+    <description>Процент ресурсов для очереди 'default'.</description>
+  </property>
+  
+  <property>
+    <name>yarn.scheduler.capacity.root.default.user-limit-factor</name>
+    <value>1</value>
+    <description>Разрешить одному пользователю занимать 100% ресурсов очереди.</description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.default.maximum-capacity</name>
+    <value>100</value>
+    <description>Максимальный процент ресурсов для очереди 'default'.</description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.default.state</name>
+    <value>RUNNING</value>
+    <description>Состояние очереди: RUNNING (работает).</description>
+  </property>
+</configuration>
+

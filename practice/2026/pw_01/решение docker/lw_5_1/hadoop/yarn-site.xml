@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<configuration>
+  <!-- Auxiliary service for NodeManager -->
+  <property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+  </property>
+  
+  <!-- ResourceManager address (using container hostname) -->
+  <property>
+    <name>yarn.resourcemanager.address</name>
+    <value>hadoop:8032</value>
+  </property>
+  
+  <!-- ResourceManager scheduler address -->
+  <property>
+    <name>yarn.resourcemanager.scheduler.address</name>
+    <value>hadoop:8030</value>
+  </property>
+  
+  <!-- ResourceManager webapp address (0.0.0.0 = listen on all interfaces) -->
+  <property>
+    <name>yarn.resourcemanager.webapp.address</name>
+    <value>0.0.0.0:8088</value>
+    <description>Адрес для веб-интерфейса ResourceManager. 0.0.0.0 означает "слушать на всех интерфейсах".</description>
+  </property>
+  
+  <!-- ResourceManager hostname (container hostname) -->
+  <property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>hadoop</value>
+  </property>
+  
+  <!-- Application classpath -->
+  <property>
+    <name>yarn.application.classpath</name>
+    <value>
+      $HADOOP_CONF_DIR,
+      $HADOOP_COMMON_HOME/*,$HADOOP_COMMON_HOME/lib/*,
+      $HADOOP_HDFS_HOME/*,$HADOOP_HDFS_HOME/lib/*,
+      $HADOOP_MAPRED_HOME/*,$HADOOP_MAPRED_HOME/lib/*,
+      $HADOOP_YARN_HOME/*,$HADOOP_YARN_HOME/lib/*
+    </value>
+  </property>
+  
+  <!-- Memory settings -->
+  <property>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>2048</value>
+  </property>
+  
+  <property>
+    <name>yarn.scheduler.maximum-allocation-mb</name>
+    <value>2048</value>
+  </property>
+  
+  <!-- Enable container logging -->
+  <property>
+    <name>yarn.nodemanager.log-dirs</name>
+    <value>${yarn.log.dir}/userlogs</value>
+  </property>
+  
+  <!-- Enable log aggregation -->
+  <property>
+    <name>yarn.log-aggregation-enable</name>
+    <value>true</value>
+  </property>
+  
+  <!-- Localizer directory -->
+  <property>
+    <name>yarn.nodemanager.local-dirs</name>
+    <value>file:/opt/hadoop_data/nodemanager</value>
+  </property>
+  
+  <!-- Scheduler class -->
+  <property>
+    <name>yarn.resourcemanager.scheduler.class</name>
+    <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
+    <description>Использовать CapacityScheduler для управления очередями.</description>
+  </property>
+</configuration>
