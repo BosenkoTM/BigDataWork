@@ -1,4 +1,4 @@
-# Практическая работа 3 — ML Pipeline на Spark MLlib
+# Практическая работа 3. ML Pipeline на Spark MLlib
 
 > **Вариант 20** |
 
