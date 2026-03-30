@@ -1,0 +1,29 @@
+services:
+  h2o-server:
+    image: h2oai/h2o-open-source-k8s:latest
+    container_name: h2o_cluster
+    ports:
+      - "54321:54321"
+    volumes:
+      - ./data:/data
+    networks:
+      - h2o-net
+
+  jupyter:
+    build: .
+    container_name: jupyter_workspace
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./data:/home/jovyan/data
+      - ./notebooks:/home/jovyan/work
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+    networks:
+      - h2o-net
+    depends_on:
+      - h2o-server
+
+networks:
+  h2o-net:
+    driver: bridge
